@@ -7,9 +7,11 @@ function App() {
 
   const [events, setEvents] = useState([]);
 
-  const calendarID = "wakeup.mau@gmail.com";
-  const apiKey = "AIzaSyAWOSQ00eTh9fplH6yhsXDtd7vzDtOHv4A";
+  const calendarID = process.env.REACT_APP_CALENDAR_ID;
+  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
   const accessToken = process.env.REACT_APP_GOOGLE_ACCESS_TOKEN;
+
+  console.log(calendarID);
 
   const getEvents = (calendarID, apiKey) => {
     function initiate() {
